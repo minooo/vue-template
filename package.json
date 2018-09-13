@@ -21,7 +21,9 @@
   "homepage": "https://github.com/minooo/vue-template#readme",
   "dependencies": {
     "axios": "^0.18.0",
-    "nuxt": "^1.4.2"
+    "nuxt": "^1.4.2",
+    "sweetalert": "^2.1.0",
+    "vue-notifications": "^0.9.0"
   },
   "devDependencies": {
     "node-sass": "^4.9.3",

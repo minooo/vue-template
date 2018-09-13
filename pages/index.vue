@@ -1,31 +1,16 @@
 <template>
 <div>
   <button @click="onBtn" class="w60 h20 bg-main mt20 mb20">click me</button>
-      <div class="box" id="con" contenteditable="true">
-        <span class="wait-at" contenteditable="false">hell12o</span>123
+  <button @click="showSuccessMsg" class="w60 h20 bg-main mt20 mb20">alert !!!</button>
+      <div class="box" id="con" contenteditable="true" @keyup="message_input" ref="con">
+              <!-- <span class="wait-at" contenteditable="false">hell12o</span>123 -->
       </div>
-      <section class="container">
+            <section class="container">
     <div class="flex">flex</div>
     <div>
       <app-logo/>
-      <h1 class="title">
-        {{ name }}
-      </h1>
-      <h2 class="subtitle">
-        {{ description }}
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
-      </div>
-      <div>{{mark}}</div>
-
+      <div class="font24 c-main">{{mark}}</div>
+      <div><i class="i-loading c-main font24"></i></div>
       <input
         type="text"
         v-model="mark"
@@ -41,13 +26,34 @@
 
 <script>
 import AppLogo from "~/components/AppLogo.vue";
+import VueNotifications from "vue-notifications";
 export default {
   data() {
     return {
-      name: "Hello Vue",
-      description: "lala",
       mark: "hello"
     };
+  },
+  notifications: {
+    showSuccessMsg: {
+      type: VueNotifications.types.success,
+      title: "Hello there",
+      message: "That's the success!"
+    },
+    showInfoMsg: {
+      type: VueNotifications.types.info,
+      title: "Hey you",
+      message: "Here is some info for you"
+    },
+    showWarnMsg: {
+      type: VueNotifications.types.warn,
+      title: "Wow, man",
+      message: "That's the kind of warning"
+    },
+    showErrorMsg: {
+      type: VueNotifications.types.error,
+      title: "Wow-wow",
+      message: "That's the error"
+    }
   },
   components: {
     AppLogo
@@ -56,6 +62,9 @@ export default {
     console.log(this, "mounted");
   },
   methods: {
+    message_input(e) {
+      console.log("con", e, e.code)
+    },
     onBtn() {
       const ele = document.getElementById("con");
       ele.innerHTML =

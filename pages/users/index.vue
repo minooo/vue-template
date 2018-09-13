@@ -13,7 +13,7 @@ export default {
     }
   },
   head: {
-    title: 'About page'
+    title: 'user_index'
   }
 }
 </script>

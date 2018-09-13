@@ -1,3 +1,4 @@
+// 中间件允许您定义一个自定义函数运行在一个页面或一组页面渲染之前/路由变化前。
 // import axios from "axios"
 
 // export default function ({ route }) {

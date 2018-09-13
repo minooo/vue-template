@@ -14,7 +14,7 @@ export default {
     }
   },
   head: {
-    title: 'About page'
+    title: 'user'
   }
 }
 </script>
