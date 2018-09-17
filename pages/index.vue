@@ -1,90 +1,91 @@
 <template>
-<div>
-  <button @click="onBtn" class="w60 h20 bg-main mt20 mb20">click me</button>
-  <button @click="showSuccessMsg" class="w60 h20 bg-main mt20 mb20">alert !!!</button>
-      <div class="box" id="con" contenteditable="true" @keyup="message_input" ref="con">
-              <!-- <span class="wait-at" contenteditable="false">hell12o</span>123 -->
-      </div>
-            <section class="container">
-    <div class="flex">flex</div>
-    <div>
-      <app-logo/>
-      <div class="font24 c-main">{{mark}}</div>
-      <div><i class="i-loading c-main font24"></i></div>
-      <input
-        type="text"
-        v-model="mark"
-        @keyup.enter="show()"
-        @keyup.delete="onKeyup"
-        v-on:blur="blur"
-      />
+  <div>
+    <nuxt-link to="/todos" class="w80 h60 flex ai-center jc-center bg-main font14 c-white">todo page</nuxt-link><br>
+    <button class="w60 h20 bg-main mt20 mb20" @click="onBtn">click me</button>
+    <button class="w60 h20 bg-main mt20 mb20" @click="showSuccessMsg">alert !!!</button>
+    <div id="con" ref="con" class="box" contenteditable="true" @keyup="message_input">
+      <!-- <span class="wait-at" contenteditable="false">hell12o</span>123 -->
     </div>
-  </section>
-</div>
+    <section class="container">
+      <div class="flex">flex</div>
+      <div>
+        <app-logo />
+        <div class="font24 c-main">{{ mark }}</div>
+        <div><i class="i-loading c-main font24" /></div>
+        <input
+          v-model="mark"
+          type="text"
+          @keyup.enter="show()"
+          @keyup.delete="onKeyup"
+          @blur="blur"
+        >
+      </div>
+    </section>
+  </div>
 
 </template>
 
 <script>
-import AppLogo from "~/components/AppLogo.vue";
-import VueNotifications from "vue-notifications";
+import AppLogo from '~/components/AppLogo.vue'
+import VueNotifications from 'vue-notifications'
 export default {
+  components: {
+    AppLogo
+  },
   data() {
     return {
-      mark: "hello"
-    };
+      mark: 'hello'
+    }
   },
   notifications: {
     showSuccessMsg: {
       type: VueNotifications.types.success,
-      title: "Hello there",
+      title: 'Hello there',
       message: "That's the success!"
     },
     showInfoMsg: {
       type: VueNotifications.types.info,
-      title: "Hey you",
-      message: "Here is some info for you"
+      title: 'Hey you',
+      message: 'Here is some info for you'
     },
     showWarnMsg: {
       type: VueNotifications.types.warn,
-      title: "Wow, man",
+      title: 'Wow, man',
       message: "That's the kind of warning"
     },
     showErrorMsg: {
       type: VueNotifications.types.error,
-      title: "Wow-wow",
+      title: 'Wow-wow',
       message: "That's the error"
     }
   },
-  components: {
-    AppLogo
-  },
   mounted() {
-    console.log(this, "mounted");
+    console.log(this, 'mounted')
   },
   methods: {
     message_input(e) {
-      console.log("con", e, e.code)
+      console.log('con', e, e.code)
     },
     onBtn() {
-      const ele = document.getElementById("con");
+      const ele = document.getElementById('con')
       ele.innerHTML =
         ele.innerHTML +
-        `<span class="wait-at" contenteditable="false">lalala</span>`;
+        `<span class="wait-at" contenteditable="false">lalala</span>`
     },
     show() {
-      alert("enter!!!!!");
+      alert('enter!!!!!')
     },
     onFocus() {
-      alert("focus");
+      alert('focus')
     },
     onKeyup(e) {
-      console.log(e, "up");
+      console.log(e, 'up')
     },
     blur() {
-      console.log("blur");
+      console.log('blur')
     }
   }
-};
+}
 </script>
 
 <style>

@@ -9,7 +9,7 @@
 export default {
   asyncData() {
     return {
-      name: process.static ? 'static' : (process.server ? 'server' : 'client')
+      name: process.static ? 'static' : process.server ? 'server' : 'client'
     }
   },
   head: {

@@ -8,5 +8,5 @@
 // }
 
 export default function (context) {
-  console.log("from middleware/stats")
+  console.warn('from middleware/stats')
 }
