@@ -35,10 +35,11 @@ module.exports = {
   },
   css: [{ src: '~assets/styles/common.scss', lang: 'scss' }],
   // 页面切换时的顶部加载条样式定制，也可以直赋值 false 禁用
-  loading: {
-    color: 'blue',
-    height: '5px'
-  },
+  loading: false,
+  // loading: {
+  //   color: 'blue',
+  //   height: '5px'
+  // },
   router: {
     middleware: 'stats'
   },
@@ -52,7 +53,7 @@ module.exports = {
     },
     vendor: ['axios', '~/plugins/vue-notifications'],
     extend(config, ctx) {
-      if (ctx.isClient) {
+      if (ctx.isDev && ctx.isClient) {
         // Run ESLint on save
         config.module.rules.push({
           enforce: 'pre',
@@ -60,7 +61,10 @@ module.exports = {
           loader: 'eslint-loader',
           exclude: /(node_modules)/
         })
+        // Extend only webpack config for client-bundle
+        if (isClient) { config.target = 'electron-renderer' }
       }
+
     },
     loaders: [
       {

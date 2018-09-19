@@ -11,10 +11,6 @@
         "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
         "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore ."
     },
-    "pre-commit": [
-        "lintfix",
-        "lint"
-    ],
     "repository": {
         "type": "git",
         "url": "git+https://github.com/minooo/vue-template.git"
@@ -34,6 +30,9 @@
     },
     "devDependencies": {
         "babel-eslint": "^9.0.0",
+        "cross-env": "^5.2.0",
+        "electron": "^2.0.9",
+        "electron-devtools-installer": "^2.2.4",
         "eslint": "^5.6.0",
         "eslint-config-standard": "^12.0.0",
         "eslint-loader": "^2.1.0",
