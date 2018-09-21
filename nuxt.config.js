@@ -14,6 +14,7 @@ module.exports = {
         content: '我的vue, 内容，内容'
       }
     ],
+    dev: process.env.NODE_ENV === 'DEV',
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
       // {
@@ -55,14 +56,14 @@ module.exports = {
     extend(config, ctx) {
       if (ctx.isDev && ctx.isClient) {
         // Run ESLint on save
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
+        // config.module.rules.push({
+        //   enforce: 'pre',
+        //   test: /\.(js|vue)$/,
+        //   loader: 'eslint-loader',
+        //   exclude: /(node_modules)/
+        // })
         // Extend only webpack config for client-bundle
-        if (isClient) { config.target = 'electron-renderer' }
+        if (ctx.isClient) { config.target = 'electron-renderer' }
       }
 
     },

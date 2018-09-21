@@ -26,7 +26,8 @@ module.exports = {
     // https://eslint.org/docs/rules/
     // Allow paren-less arrow functions only when there's no braces
     'arrow-parens': [2, 'as-needed', { requireForBlockBody: true }],
-
+    quotes: 0,
+    semi: 0,
     // Allow async-await
     'generator-star-spacing': 0,
 
