@@ -1,4 +1,4 @@
-// 其他的一些常用设置
+/* 其他的一些常用设置 */
 .box {
   width: 1200px;
   margin-left: auto;
@@ -83,7 +83,7 @@
   line-height: 150%;
 }
 
-// 文本方向
+/* 文本方向 */
 .text-left {
   text-align: left;
 }
@@ -96,14 +96,14 @@
   text-align: center;
 }
 
-// 字符溢出隐藏
+/* 字符溢出隐藏 */
 .text-overflow-one {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-// 字符超出一行溢出隐藏
+/* 字符超出一行溢出隐藏 */
 .text-overflow-1 {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -112,7 +112,7 @@
   -webkit-box-orient: vertical;
 }
 
-// 字符超出两行溢出隐藏
+/* 字符超出两行溢出隐藏 */
 .text-overflow-2 {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -121,7 +121,7 @@
   -webkit-box-orient: vertical;
 }
 
-// 字符超出三行溢出隐藏
+/* 字符超出三行溢出隐藏 */
 .text-overflow-3 {
   overflow: hidden;
   text-overflow: ellipsis;
