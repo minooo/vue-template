@@ -26,9 +26,7 @@
         "axios": "^0.18.0",
         "element-ui": "^2.4.7",
         "lodash.debounce": "^4.0.8",
-        "nuxt": "^1.4.2",
-        "sweetalert": "^2.1.0",
-        "vue-notifications": "^0.9.0"
+        "nuxt": "^1.4.2"
     },
     "devDependencies": {
         "babel-eslint": "^9.0.0",

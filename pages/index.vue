@@ -3,7 +3,6 @@
     <el-button type="primary" icon="el-icon-edit">123</el-button>
     <nuxt-link to="/todos" class="w80 h60 flex ai-center jc-center bg-main font14 c-white">todo page</nuxt-link><br>
     <button class="w60 h20 bg-main mt20 mb20" @click="onBtn">click me</button>
-    <button class="w60 h20 bg-main mt20 mb20" @click="showSuccessMsg">alert123!!</button>
     <div id="con" ref="con" class="box" contenteditable="true" @keyup="message_input">
       <!-- <span class="wait-at" contenteditable="false">hell12o</span>123 -->
     </div>
@@ -12,7 +11,8 @@
       <div>
         <app-logo />
         <div class="font24 c-main">{{ mark }}</div>
-        <div><i class="i-loading c-main font24" /></div>
+        <div>
+          <i class="i-loading c-main font24" /></div>
         <input
           v-model="mark"
           type="text"
@@ -27,7 +27,7 @@
 
 <script>
 import AppLogo from "~/components/AppLogo.vue";
-import VueNotifications from "vue-notifications";
+
 export default {
   components: {
     AppLogo
@@ -36,28 +36,6 @@ export default {
     return {
       mark: "hello"
     };
-  },
-  notifications: {
-    showSuccessMsg: {
-      type: VueNotifications.types.success,
-      title: "Hello there",
-      message: "That's the success!"
-    },
-    showInfoMsg: {
-      type: VueNotifications.types.info,
-      title: "Hey you",
-      message: "Here is some info for you"
-    },
-    showWarnMsg: {
-      type: VueNotifications.types.warn,
-      title: "Wow, man",
-      message: "That's the kind of warning"
-    },
-    showErrorMsg: {
-      type: VueNotifications.types.error,
-      title: "Wow-wow",
-      message: "That's the error"
-    }
   },
   mounted() {
     console.log(this, "mounted");
