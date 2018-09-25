@@ -47,12 +47,12 @@ module.exports = {
   // plugins 属性使得你可以轻易地为 Nuxt.js 配置使用 Vue.js 插件。
   // 其他配置
   // [ { src: '~/plugins/vue-notifications', ssr: false } ]
-  plugins: ['~/plugins/vue-notifications'],
+  plugins: ['~/plugins/components'],
   build: {
     analyze: {
       analyzerMode: 'static'
     },
-    vendor: ['axios', '~/plugins/vue-notifications'],
+    vendor: ['axios', '~/plugins/components'],
     extend(config, { isDev, isClient }) {
       if (isDev && isClient) {
         // Run ESLint on save

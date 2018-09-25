@@ -1,5 +1,6 @@
 <template>
   <div>
+    <el-button type="primary" icon="el-icon-edit">123</el-button>
     <nuxt-link to="/todos" class="w80 h60 flex ai-center jc-center bg-main font14 c-white">todo page</nuxt-link><br>
     <button class="w60 h20 bg-main mt20 mb20" @click="onBtn">click me</button>
     <button class="w60 h20 bg-main mt20 mb20" @click="showSuccessMsg">alert123!!</button>
