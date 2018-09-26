@@ -1,5 +1,7 @@
 <template>
-  <ul>
+  <div>
+    <nuxt-link to="/" class="w80 h60 flex ai-center jc-center bg-main font14 c-white">todo page</nuxt-link>
+    <ul>
     <li v-for="(todo, index) in todos" :key="index">
       <input type="checkbox" :checked="todo.done" @change="toggle(todo)">
       <span :class="{done: todo.done }">{{ todo.text }}</span>
@@ -7,6 +9,7 @@
     </li>
     <li><input placeholder="今天你想做点啥" @keyup.enter="addTodo"></li>
   </ul>
+  </div>
 </template>
 
 <script>
