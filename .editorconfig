@@ -5,9 +5,8 @@
 # top-most EditorConfig file
 root = true
 
-# 应用于所有文件
-[*]
-
+# 应用于所有js, vue文件
+[*.{js, vue}]
 charset = utf-8
 
 # 首航缩进
@@ -15,7 +14,7 @@ indent_style = space
 indent_size = 2
 
 # 关于换行符的介绍 http://blog.csdn.net/timberwolf_2012/article/details/28687477
-end_of_line = lf
+end_of_line = crlf
 # 在文件的最后需要有换行回车
 insert_final_newline = true
 # 去除每行末尾的空白符
