@@ -2,7 +2,7 @@ module.exports = {
   // Global CSS
   mode: 'spa',
   head: {
-    title: 'my vue app',
+    title: 'my vue app'
     // meta: [
     //   { charset: 'utf-8' },
     //   {
@@ -66,7 +66,7 @@ module.exports = {
       }
       // 注意，开启
       if (process.env.NODE_ENV === "DEV") { config.target = 'electron-renderer' }
-    },
+    }
     // loaders: [
     //   {
     //     test: /\.(png|jpe?g|gif|svg)$/,
